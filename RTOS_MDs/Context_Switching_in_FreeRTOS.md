@@ -1,6 +1,7 @@
 ## What is Context Switching?
 
 A **context switch** is the sequential execution of the following actions:
+
 - **Saving** the state of the currently running task
 - **Restoring** the state of the next task to run; so that execution can resume where the new task last left off.
 
@@ -8,6 +9,7 @@ This switching is what creates the **illusion of parallelism** on a single-core
 CPU.
 
 #### The “Context” Includes the following thing:
+
 - CPU registers (R0–R12)
 - Stack pointer (SP)
 - Link register (LR)
@@ -72,13 +74,10 @@ The context of the new task is loaded:
   PendSV_Handler exits
 - Execution continues as if the new task had never been paused.
 
-
 ## What about critical sections?
 
 During context switching interrupts are disabled to avoid race conditions.
 This ensures atomicity when saving and restoring context.
 
 > FreeRTOS uses macros like taskENTER_CRITICAL() and taskEXIT_CRITICAL() to
-  protect critical regions.
-
-
+> protect critical regions.

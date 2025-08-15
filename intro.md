@@ -30,7 +30,7 @@ Use the sidebar to navigate between topics. Each section contains concise explan
 
 ## Contributing
 
-<!-- Suggestions and improvements are welcome!  
+<!-- Suggestions and improvements are welcome!
 - [Open an issue](https://github.com/subhranildas/Docs/issues)
 - [Star the repo](https://github.com/subhranildas/Docs)
 - [Share feedback](https://github.com/subhranildas/Docs) -->
@@ -42,4 +42,4 @@ Copyright (c) Subhranil Das
 
 ---
 
-_This site uses Docsify and docsify-themeable for a modern documentation
+\_This site uses Docsify and docsify-themeable for a modern documentation

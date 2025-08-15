@@ -9,7 +9,7 @@ The quickest way to get started on a new docsify site is by using the template p
    ?> CDN availability includes [jsdelivr](https://www.jsdelivr.com/package/npm/docsify-themeable) (shown below), [unpkg](https://unpkg.com/browse/docsify-themeable/), and other CDN services that auto-publish npm packages.
 
    ```html
-   <!doctype html>
+   <!DOCTYPE html>
    <html lang="en">
      <head>
        <meta charset="utf-8" />
@@ -131,8 +131,8 @@ Existing site owners may prefer to modify their existing `index.html` file using
        // ...
        themeable: {
          readyTransition: true, // default
-         responsiveTables: true // default
-       }
+         responsiveTables: true, // default
+       },
      };
    </script>
    ```

@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -12,14 +12,12 @@
       content="A delightfully simple theme system for docsify.js. Features multiple themes with rich customization options, an improved desktop and mobile experience, and legacy browser support (IE11+)."
     />
 
-    <meta 
-      name="google-site-verification" 
-      content="UTGHE_rwH4ThrYxypR2X0ZiORsxxu5pZ4-SYum03hKw" 
+    <meta
+      name="google-site-verification"
+      content="UTGHE_rwH4ThrYxypR2X0ZiORsxxu5pZ4-SYum03hKw"
     />
 
-    <title>
-      Subhranil's Docs
-    </title>
+    <title>Subhranil's Docs</title>
 
     <!-- Tab Icon -->
     <link rel="icon" type="image/png" href="assets/img/opensource-icon.svg" />
@@ -38,11 +36,12 @@
       href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css"
     />
 
-    <link 
-      rel="stylesheet" 
+    <link
+      rel="stylesheet"
       data-style-group="themeable"
       media="(prefers-color-scheme: light)"
-      href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
+      href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css"
+    />
 
     <!-- Custom Styles -->
     <style>
@@ -65,10 +64,10 @@
       /* Sidebar toggle Button Styles */
       .sidebar-toggle {
         position: fixed !important;
-        top: 10px;       /* distance from top */
-        left: 10px;      /* distance from left */
-        z-index: 9999;   /* on top of everything */
-        margin: 0;       /* remove default margin if any */
+        top: 10px; /* distance from top */
+        left: 10px; /* distance from left */
+        z-index: 9999; /* on top of everything */
+        margin: 0; /* remove default margin if any */
       }
 
       .sidebar-toggle-button {
@@ -94,7 +93,6 @@
         text-transform: none !important;
         font-size: 0.85em !important; /* Optional: keep headings same size as links */
       }
-
     </style>
 
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -104,42 +102,50 @@
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/themes/dark.css" data-style-group="themeable"> -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/themes/pure.css" data-style-group="themeable"> -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/themes/vue.css" data-style-group="themeable"> -->
-
-    </head>
+  </head>
 
   <body>
     <div id="app"></div>
 
     <script>
       window.$docsify = {
-        
         /* General ----------------------------------------------------------------- */
-        name: 'Subhranil\'s Docs',
-        repo: 'https://github.com/subhranildas/Docs',
+        name: "Subhranil's Docs",
+        repo: "https://github.com/subhranildas/Docs",
         /* coverpage: 'coverpage.md', */
-        homepage: 'intro.md',
-        loadSidebar: 'sidebar.md',
+        homepage: "intro.md",
+        loadSidebar: "sidebar.md",
 
         /* Navigation -------------------------------------------------------------- */
         auto2top: true,
         maxLevel: 3,
         subMaxLevel: 3,
 
+        /* Sidebar ----------------------------------------------------------------- */
+
+        // subMaxLevel: 0,  // Prevent page headers from appearing in sidebar
+        sidebarDisplayLevel: 1, // 👈 Expand first-level only
+        // sidebarDepth: 2, // 👈 Show only first two levels in sidebar
+        // sidebarCollapse: {
+        //   collapse: true,      // Top-level items always expanded
+        //   hideOthers: false,     // Multiple submenus can be open
+        //   level: 1,
+        // },
         /* Plugins ----------------------------------------------------------------- */
         executeScript: false,
         search: {
           depth: 3,
-          noData: 'No results!',
-          placeholder: 'Search...'
+          noData: "No results!",
+          placeholder: "Search...",
         },
         plugins: [
           /* Restores initial <title> */
           function persistTitle(hook, vm) {
-            var titleElm = document.querySelector('title');
+            var titleElm = document.querySelector("title");
             var rootTitle = titleElm && titleElm.textContent;
             var pageTitlePrefix = window.$docsify.name
-              ? window.$docsify.name + ' - '
-              : '';
+              ? window.$docsify.name + " - "
+              : "";
 
             if (rootTitle) {
               hook.doneEach(function () {
@@ -152,52 +158,54 @@
                 titleElm.textContent = newTitle;
               });
             }
-          }
-        ]
+          },
+        ],
       };
     </script>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const resizer = document.createElement('div');
-        resizer.id = 'sidebar-resizer';
+      document.addEventListener("DOMContentLoaded", function () {
+        const resizer = document.createElement("div");
+        resizer.id = "sidebar-resizer";
         document.body.appendChild(resizer);
 
         Object.assign(resizer.style, {
-          width: '8px',
-          height: '100vh',
-          position: 'fixed',
-          top: '0',
+          width: "8px",
+          height: "100vh",
+          position: "fixed",
+          top: "0",
           left: `calc(var(--sidebar-width) - 8px)`,
-          background: 'transparent',
-          cursor: 'ew-resize',
-          zIndex: '998',
+          background: "transparent",
+          cursor: "ew-resize",
+          zIndex: "998",
         });
 
         let isResizing = false;
 
-        resizer.addEventListener('mousedown', function (e) {
+        resizer.addEventListener("mousedown", function (e) {
           isResizing = true;
-          document.body.style.cursor = 'ew-resize';
-          document.body.classList.add('no-select');
+          document.body.style.cursor = "ew-resize";
+          document.body.classList.add("no-select");
         });
 
-        document.addEventListener('mousemove', function (e) {
+        document.addEventListener("mousemove", function (e) {
           if (!isResizing) return;
           const newWidth = Math.min(Math.max(e.clientX, 150), 600);
-          document.documentElement.style.setProperty('--sidebar-width', newWidth + 'px');
-          resizer.style.left = newWidth + 'px';
+          document.documentElement.style.setProperty(
+            "--sidebar-width",
+            newWidth + "px"
+          );
+          resizer.style.left = newWidth + "px";
         });
 
-        document.addEventListener('mouseup', function () {
+        document.addEventListener("mouseup", function () {
           if (isResizing) {
             isResizing = false;
-            document.body.style.cursor = 'default';
-            document.body.classList.remove('no-select');
+            document.body.style.cursor = "default";
+            document.body.classList.remove("no-select");
           }
         });
       });
-
     </script>
 
     <script src="assets/js/main.js"></script>
@@ -217,6 +225,6 @@
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-c.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-cpp.min.js"></script>
-  
+    <script src="https://cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
   </body>
 </html>
