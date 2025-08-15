@@ -39,7 +39,7 @@ Docsify-themeable also adds a `themeable` class to the `<html>` element during i
 There are several ways to detect if docsify-themeable is being used via JavaScript. The first is to test for the existence of the `themeable` class on the document:
 
 ```js
-var isThemeable = document.documentElement.classList.contains('themeable');
+var isThemeable = document.documentElement.classList.contains("themeable");
 
 console.log(isThemeable); // true|false (Boolean)
 ```

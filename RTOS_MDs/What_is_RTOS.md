@@ -5,30 +5,27 @@ to handle **real-time tasks**/operations that must be executed within
 **strict time constraints**.
 
 > It focuses on **predictability and responsiveness**, ensuring that
-high-priority tasks are executed within deterministic time.
+> high-priority tasks are executed within deterministic time.
 
 **Real Time Operating Systems** are commonly used in **embedded systems** such as automotive ECUs,
 medical devices, and IoT products — where **Timing is critical**.
 
-
 ## RTOS vs. GPOS
 
-| **Feature**            | **RTOS (Real-Time OS)**                          | **GPOS (General-Purpose OS)**                 |
-|------------------------|--------------------------------------------------|-----------------------------------------------|
-|   Goal                 | Deterministic, time-critical task execution      | Maximum throughput, multitasking, convenience |
-|   Task Scheduling      | Priority-based, deterministic                    | Fair or round-robin scheduling                |
-|   Response Time        | Predictable, low-latency                         | Variable and non-deterministic                |
-|   Interrupt Handling   | Very fast, low overhead                          | Slower, handled through complex subsystems    |
-|   Footprint            | Lightweight, minimal features                    | Heavyweight, includes drivers, GUI, etc.      |
-|   Use Case             | Embedded systems, robotics, real-time control    | PCs, servers, smartphones                     |
-|   Examples             | FreeRTOS, Zephyr, VxWorks, Micrium OS            | Windows, Linux, macOS, Android                |
-
+| **Feature**        | **RTOS (Real-Time OS)**                       | **GPOS (General-Purpose OS)**                 |
+| ------------------ | --------------------------------------------- | --------------------------------------------- |
+| Goal               | Deterministic, time-critical task execution   | Maximum throughput, multitasking, convenience |
+| Task Scheduling    | Priority-based, deterministic                 | Fair or round-robin scheduling                |
+| Response Time      | Predictable, low-latency                      | Variable and non-deterministic                |
+| Interrupt Handling | Very fast, low overhead                       | Slower, handled through complex subsystems    |
+| Footprint          | Lightweight, minimal features                 | Heavyweight, includes drivers, GUI, etc.      |
+| Use Case           | Embedded systems, robotics, real-time control | PCs, servers, smartphones                     |
+| Examples           | FreeRTOS, Zephyr, VxWorks, Micrium OS         | Windows, Linux, macOS, Android                |
 
 ## Real-Life Analogy
 
 - **RTOS** is like a factory manager who ensures every task is done **on time**, in a **fixed sequence**, with **no room for delay**.
 - **GPOS** is like a city mayor — trying to keep everything running, but not guaranteeing when each thing will happen.
-
 
 ## When to use What
 
@@ -60,22 +57,20 @@ It’s written in **C**, easy to port, and supports a large number of hardware
 platforms.
 
 ## Common Use Cases
+
 - **IoT Devices** (sensors, smart locks, wearables)
 - **Automotive Control Systems**
 - **Industrial Automation**
 - **Medical Devices**
 - **Consumer Electronics**
 
-
 ## FreeRTOS Alternatives
 
 A curated list of open-source and commercial real-time operating systems (RTOS) that can be used instead of FreeRTOS, depending on your project's requirements.
 
-
 ### Open-Source RTOS Alternatives
 
 <!-- tabs:start -->
-
 
 #### **Zephyr RTOS**
 
@@ -111,7 +106,6 @@ A curated list of open-source and commercial real-time operating systems (RTOS) 
 - **Use Case**: Wireless sensor networks
 - **Website**: [https://www.riot-os.org](https://www.riot-os.org)
 
-
 #### **ChibiOS/RT**
 
 - **Language**: C
@@ -135,13 +129,12 @@ A curated list of open-source and commercial real-time operating systems (RTOS) 
 
 <!-- tabs:end -->
 
-
-
 ### Commercial RTOS Alternatives
 
 <!-- tabs:start -->
 
 #### **ThreadX (Azure RTOS)**
+
 - **Owned by**: Microsoft
 - **Key Features**:
   - Fast, deterministic kernel
@@ -150,8 +143,8 @@ A curated list of open-source and commercial real-time operating systems (RTOS) 
 - **Use Case**: Medical, industrial, consumer electronics
 - **Website**: [https://learn.microsoft.com/en-us/azure/rtos/](https://learn.microsoft.com/en-us/azure/rtos/)
 
-
 #### **QNX**
+
 - **Owned by**: BlackBerry
 - **Key Features**:
   - Microkernel architecture
@@ -160,8 +153,8 @@ A curated list of open-source and commercial real-time operating systems (RTOS) 
 - **Use Case**: Automotive, medical, aerospace
 - **Website**: [https://blackberry.qnx.com](https://blackberry.qnx.com)
 
-
 #### **VxWorks**
+
 - **Owned by**: Wind River
 - **Key Features**:
   - Mature, safety-critical RTOS
@@ -171,7 +164,6 @@ A curated list of open-source and commercial real-time operating systems (RTOS) 
 - **Website**: [https://www.windriver.com/products/vxworks](https://www.windriver.com/products/vxworks)
 
 <!-- tabs:end -->
-
 
 ### Some Honorable Mentions
 
@@ -190,4 +182,3 @@ Lightweight RTOS from Alibaba for IoT
 AWS-enhanced FreeRTOS for cloud integration
 
 <!-- tabs:end -->
-

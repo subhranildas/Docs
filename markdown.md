@@ -148,7 +148,7 @@ This is <sup>superscript</sup>
 
 [Inline link](https://google.com)
 
-[Inline link with title](https://google.com 'Google')
+[Inline link with title](https://google.com "Google")
 
 [Reference link by name][link1]
 
@@ -165,7 +165,7 @@ This is <sup>superscript</sup>
 ```markdown
 [Inline link](https://google.com)
 
-[Inline link with title](https://google.com 'Google')
+[Inline link with title](https://google.com "Google")
 
 [Reference link by name][link1]
 
@@ -339,7 +339,6 @@ force the content to wrap and span multiple lines.
 ## Tabs
 
 Tabs provided via the
-
 
 <!-- tabs:start -->
 
@@ -521,26 +520,26 @@ Ciao!
 
 Inline-style
 
-![alt text](//source.unsplash.com/daily 'Provided by unsplash.com')
+![alt text](//source.unsplash.com/daily "Provided by unsplash.com")
 
 Reference-style
 
 ![alt text][logo]
 
-[logo]: //source.unsplash.com/collection/881815 'Provided by unsplash.com'
+[logo]: //source.unsplash.com/collection/881815 "Provided by unsplash.com"
 
 #### **Markdown**
 
 ```markdown
 **Inline**
 
-![alt text](//source.unsplash.com/daily 'Provided by unsplash.com')
+![alt text](//source.unsplash.com/daily "Provided by unsplash.com")
 
 **Reference**
 
 ![alt text][logo]
 
-[logo]: //source.unsplash.com/collection/881815 'Provided by unsplash.com'
+[logo]: //source.unsplash.com/collection/881815 "Provided by unsplash.com"
 ```
 
 <!-- tabs:end -->

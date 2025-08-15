@@ -13,8 +13,8 @@ Determines if a loading indicator will be displayed while waiting for the site t
 window.$docsify = {
   // ...
   themeable: {
-    readyTransition: true // default
-  }
+    readyTransition: true, // default
+  },
 };
 ```
 
@@ -33,7 +33,7 @@ When `true`, the `<table>` layout will be adjusted on smaller screens, allowing 
 window.$docsify = {
   // ...
   themeable: {
-    responsiveTables: true // default
-  }
+    responsiveTables: true, // default
+  },
 };
 ```
