@@ -90,8 +90,14 @@
       }
 
       .sidebar .sidebar-nav strong {
-        text-transform: none !important;
-        font-size: 0.85em !important; /* Optional: keep headings same size as links */
+        /* text-transform: none !important; */
+        font-size: 0.85em !important;
+      }
+      .sidebar .sidebar-nav strong:hover {
+        /* background-color: #e0e0e0; */
+        color: #2470c7;
+        transition: color 0.2s;
+        cursor: pointer;
       }
     </style>
 
@@ -119,18 +125,18 @@
         /* Navigation -------------------------------------------------------------- */
         auto2top: true,
         maxLevel: 3,
-        subMaxLevel: 3,
+        // subMaxLevel: 3,
 
         /* Sidebar ----------------------------------------------------------------- */
 
-        // subMaxLevel: 0,  // Prevent page headers from appearing in sidebar
-        sidebarDisplayLevel: 1, // 👈 Expand first-level only
+        subMaxLevel: 2, // Prevent page headers from appearing in sidebar
+        sidebarDisplayLevel: 0, // 👈 Expand first-level only
         // sidebarDepth: 2, // 👈 Show only first two levels in sidebar
-        // sidebarCollapse: {
-        //   collapse: true,      // Top-level items always expanded
-        //   hideOthers: false,     // Multiple submenus can be open
-        //   level: 1,
-        // },
+        sidebarCollapse: {
+          collapse: true, // Top-level items always expanded (not collapsible)
+          hideOthers: true, // Multiple submenus can be open
+          level: 1,
+        },
         /* Plugins ----------------------------------------------------------------- */
         executeScript: false,
         search: {
@@ -222,9 +228,11 @@
     <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1/dist/docsify-tabs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@2/dist/docsify-copy-code.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-c.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-cpp.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-makefile.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
   </body>
 </html>
