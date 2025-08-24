@@ -22,7 +22,16 @@
   - [Recursion](DOCS/MAKE_DOCS/Recursion.md)
   - [Some Supported Options](DOCS/MAKE_DOCS/Some_Supported_Options.md)
 - **Assembly**
-  - [Markdown](markdown2)
+  - [Introduction](DOCS/ASM_DOCS/Introduction.md)
+  - [Computing Device <span class="prereq">(Prerequisite)</span>](DOCS/ASM_DOCS/Prerequisites_1.md)
+  - [Number System <span class="prereq">(Prerequisite)</span>](DOCS/ASM_DOCS/Prerequisites_2.md)
+  - [CISC Design Philosophy <span class="prereq">(Prerequisite)</span>](DOCS/ASM_DOCS/Prerequisites_3.md)
+  - [RISC Design Philosophy <span class="prereq">(Prerequisite)</span>](DOCS/ASM_DOCS/Prerequisites_4.md)
+  - [ARM Design Philosophy <span class="prereq">(Prerequisite)</span>](DOCS/ASM_DOCS/Prerequisites_5.md)
+  - [Von-Nuemann and Harvard Architecture <span class="prereq">(Prerequisite)</span>](DOCS/ASM_DOCS/Prerequisites_6.md)
+  - [Cortex-M Registers and Vector-Table <span class="prereq">(Prerequisite)</span>](DOCS/ASM_DOCS/Prerequisites_7.md)
+  - [ARM,Thumb & Thumb2 Instruction Sets]()
+  - [Assembler Rules & Directives]()
 - **Docker**
   - [Markdown](markdown2)
 - **Links**
