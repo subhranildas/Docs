@@ -69,6 +69,19 @@ Now we can create a container out of this image by running the following command
 docker run -p 3000:3000 <imageID>
 ```
 
+To get all the available images stored in the local Docker image store, the following command can be used.
+
+```bash
+docker images
+```
+
+Also Filters can be used for various options.
+For example, to show only dangling images (untagged images not associated with any container), use:
+
+```bash
+docker images --filter "dangling=true"
+```
+
 Now we can visit [localhost:3000](http://localhost:3000)
 
 > The purpose of **-p 3000:3000** is to publish port 3000 onto port 3000.
