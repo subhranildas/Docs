@@ -185,6 +185,12 @@ Tagging an image:
 docker build -t myusername/myapp:2.0 .
 ```
 
+Naming Containers while running:
+
+```bash
+docker run -it --name <container-name> <ImageID>
+```
+
 Renaming a container:
 
 ```bash
@@ -196,35 +202,116 @@ Tags are essential for versioning and sharing.
 ## Image Sharing
 
 Docker Hub (or private registries) allows sharing images.
+Docker Hub is a cloud-based registry where we can store and share container images.
 
-### Pushing Images to DockerHub
+### Login to Docker Hub
 
-Login:
-
-Tag your image:
-
-```bash
-docker tag myapp:1.0 myusername/myapp:1.0
-```
-
-Push:
+Before pushing or pulling private images, you need to authenticate:
 
 ```bash
-docker push myusername/myapp:1.0
+docker login
 ```
 
-### Pulling and Using Shared Images
+It will prompt for:
 
-Pull an image:
+- Username → your Docker Hub username
+- Password / Personal Access Token (recommended)
 
 ```bash
-docker pull myusername/myapp:1.0
+docker info
 ```
 
-Run it:
+> Username: `<username>` → will be visible if logged in.
+
+### Tagging an Image for Docker Hub
+
+Docker Hub requires the image to be named in the following format:
+
+```md
+<dockerhub-username>/<repository-name>:<tag>
+```
+
+For example, if the Docker Hub username is subhranil and we want to push an nginx-based image,
+we can run the following command to do it.
 
 ```bash
-docker run -d myusername/myapp:1.0
+docker tag nginx:latest subhranil/my-nginx:1.0
 ```
 
-If no tag is given, Docker defaults to :latest.
+Here:
+
+- subhranil → Docker Hub username
+- my-nginx → repository name
+- 1.0 → version tag
+
+?>If no version tag is given, Docker defaults to :latest.
+
+### Pushing an Image to Docker Hub
+
+After tagging we can push it:
+
+```bash
+docker push subhranil/my-nginx:1.0
+```
+
+If successful, upload progress will be visible and the image will be available in the Docker Hub repository of the account owner.
+
+### Pulling an Image from Docker Hub
+
+Anyone (if the repo is public) or authenticated users (if private) can pull an image using the following command:
+
+```bash
+docker pull subhranil/my-nginx:1.0
+```
+
+We can then run it using the following command:
+
+```bash
+docker run -d -p 8080:80 subhranil/my-nginx:1.0
+```
+
+### Working with Private Repositories
+
+If the repository is private, one must be logged in with docker login first.
+If logged out, pulling will fail with a “denied: requested access to the resource is denied” error.
+
+### Logging Out
+
+If one is on a shared machine, log out after pushing/pulling can be done using the following command:
+
+```bash
+docker logout
+```
+
+### Quick Workflow Example
+
+- Step 1: Login
+
+```bash
+docker login
+```
+
+- Step 2: Build your image
+
+```bash
+docker build -t myapp:latest .
+```
+
+- Step 3: Tag it for Docker Hub
+
+```bash
+docker tag myapp:latest subhranil/myapp:latest
+```
+
+- Step 4: Push it
+
+```bash
+docker push subhranil/myapp:latest
+```
+
+- Step 5: (On another machine) Pull it
+
+```bash
+docker pull subhranil/myapp:latest
+docker run -d -p 8080:80 subhranil/myapp:latest
+```

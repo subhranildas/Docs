@@ -36,7 +36,11 @@
   - [Introduction](DOCS/DOCKER_DOCS/Introduction.md)
   - [Docker Images & Containers](DOCS/DOCKER_DOCS/Images_and_Containers.md)
   - [Managing Images and Containers](DOCS/DOCKER_DOCS/Managing_Images_and_Containers.md)
-  - [Markdown](markdown2)
+  - [Volumes and Bind mounts](DOCS/DOCKER_DOCS/Managing_Data_Volumes_and_Bindmounts.md)
+  - [Use cases of Volumes and Bind mounts](DOCS/DOCKER_DOCS/Usecases_of_Data_Volumes_and_Bindmounts.md)
+  - [The .dockerignore file](DOCS/DOCKER_DOCS/Docker_Ignore_file.md)
+  - [Docker Environment Variables](DOCS/DOCKER_DOCS/Docker_Environment_Variables.md)
+  - [Docker Arguments](DOCS/DOCKER_DOCS/Docker_Arguments.md)
 - **Links**
 - [![Github](assets/img/github.svg)Github](https://github.com/subhranildas/Docs)
 <!-- - [![NPM](assets/img/npm.svg)NPM](https://www.npmjs.com/package/docsify-themeable) -->
