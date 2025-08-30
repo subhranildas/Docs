@@ -22,7 +22,16 @@
   - [Recursion](DOCS/MAKE_DOCS/Recursion.md)
   - [Some Supported Options](DOCS/MAKE_DOCS/Some_Supported_Options.md)
 - **Assembly**
-  - [Markdown](markdown2)
+  - [Introduction](DOCS/ASM_DOCS/Introduction.md)
+  - [Computing Device <span class="prereq">(Prerequisite)</span>](DOCS/ASM_DOCS/Computing_Device_Prerequisite.md)
+  - [Number System <span class="prereq">(Prerequisite)</span>](DOCS/ASM_DOCS/Number_System_Prerequisite.md)
+  - [CISC Design Philosophy <span class="prereq">(Prerequisite)</span>](DOCS/ASM_DOCS/CISC_Design_Philosophy_Prerequisite.md)
+  - [RISC Design Philosophy <span class="prereq">(Prerequisite)</span>](DOCS/ASM_DOCS/RISC_Design_Philosophy_Prerequisite.md)
+  - [ARM Design Philosophy <span class="prereq">(Prerequisite)</span>](DOCS/ASM_DOCS/ARM_Design_Philosophy_Prerequisite.md)
+  - [Von-Nuemann and Harvard Architecture <span class="prereq">(Prerequisite)</span>](DOCS/ASM_DOCS/Von-Nuemann_and_Harvard_Architecture_Prerequisite.md)
+  - [Cortex-M Registers and Vector-Table <span class="prereq">(Prerequisite)</span>](DOCS/ASM_DOCS/Cortex-M_Registers_and_Vector-Table_Prerequisite.md)
+  - [ARM,Thumb & Thumb-2 Instruction Sets](DOCS/ASM_DOCS/ARM_Thumb_Thumb2_Instruction_Sets.md)
+  - [Assembler Directives](DOCS/ASM_DOCS/Assembler_Directives.md)
 - **Docker**
   - [Introduction](DOCS/DOCKER_DOCS/Introduction.md)
   - [Docker Images & Containers](DOCS/DOCKER_DOCS/Images_and_Containers.md)
