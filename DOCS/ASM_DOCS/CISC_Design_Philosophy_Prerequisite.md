@@ -46,7 +46,7 @@ The CISC philosophy emerged to **minimize program size** by allowing single inst
 - **Backward Compatibility**: Many CISC processors (e.g., Intel x86) preserve old instruction sets, ensuring software longevity.
 - **Rich Addressing Modes**: Flexible ways to access memory and operands.
 
-## 4. Disadvantages of CISC
+## Disadvantages of CISC
 
 - **Slower Execution per Instruction**: A complex instruction often takes multiple cycles.
 - **Difficult Pipelining**: Variable-length and complex instructions make pipelining harder to implement efficiently.
