@@ -32,6 +32,9 @@
   - [Cortex-M Registers and Vector-Table <span class="prereq">(Prerequisite)</span>](DOCS/ASM_DOCS/Cortex-M_Registers_and_Vector-Table_Prerequisite.md)
   - [ARM,Thumb & Thumb-2 Instruction Sets](DOCS/ASM_DOCS/ARM_Thumb_Thumb2_Instruction_Sets.md)
   - [Assembler Directives](DOCS/ASM_DOCS/Assembler_Directives.md)
+  - [Load/Store Instructions](DOCS/ASM_DOCS/Load_Store_Instructions.md)
+  - [ADR and ADRL](DOCS/ASM_DOCS/ADR_and_ADRL_Instructions.md)
+  - [Data Definition Instructions](DOCS/ASM_DOCS/Data_Definition_Instructions.md)
 - **Docker**
   - [Introduction](DOCS/DOCKER_DOCS/Introduction.md)
   - [Docker Images & Containers](DOCS/DOCKER_DOCS/Images_and_Containers.md)
