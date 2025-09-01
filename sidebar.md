@@ -37,6 +37,8 @@
   - [Docker Images & Containers](DOCS/DOCKER_DOCS/Images_and_Containers.md)
   - [Managing Images and Containers](DOCS/DOCKER_DOCS/Managing_Images_and_Containers.md)
   - [Markdown](markdown2)
+- **Git**
+  - [Handling deleted remote Branches](DOCS/GIT_DOCS/Git_Tip1.md)
 - **Links**
 - [![Github](assets/img/github.svg)Github](https://github.com/subhranildas/Docs)
 <!-- - [![NPM](assets/img/npm.svg)NPM](https://www.npmjs.com/package/docsify-themeable) -->
