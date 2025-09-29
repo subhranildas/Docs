@@ -41,6 +41,12 @@
   - [The .dockerignore file](DOCS/DOCKER_DOCS/Docker_Ignore_file.md)
   - [Docker Environment Variables](DOCS/DOCKER_DOCS/Docker_Environment_Variables.md)
   - [Docker Arguments](DOCS/DOCKER_DOCS/Docker_Arguments.md)
+- **GPU Programming**
+  - [Introduction](DOCS/GPU_PROGRAMMING/Introduction.md)
+  - [Setup Guide](DOCS/GPU_PROGRAMMING/Setup_Guide.md)
+  - [APIs and Architecture](DOCS/GPU_PROGRAMMING/APIs_and_Architecture.md)
+  - [Kernels Basics](DOCS/GPU_PROGRAMMING/Kernels.md)
 - **Links**
-- [![Github](assets/img/github.svg)Github](https://github.com/subhranildas/Docs)
+- [![Github](assets/img/icons8-github-24.png)Github](https://github.com/subhranildas/Docs)
+- [![LinkedIn](assets/img/icons8-linkedin-24.png)LinkedIn](https://www.linkedin.com/in/subhranil-d/)
 <!-- - [![NPM](assets/img/npm.svg)NPM](https://www.npmjs.com/package/docsify-themeable) -->
