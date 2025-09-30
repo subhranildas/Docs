@@ -17,6 +17,8 @@ int blockDim = 32; // 32 threads per block
 // these aren't dim3 types but they are still valid if the indexing scheme is 1D
 ```
 
+![Dim And Kernels](Images/dim_Kernel.png)
+
 - gridDim ⇒ gridDim.x _ gridDim.y _ gridDim.z = Number of Blocks being launched
 - blockDim ⇒ blockDim.x _ blockDim.y _ blockDim.z = Number of Threads per block
 - Total threads = (Threads per Block) \* (Number of Blocks)
@@ -28,6 +30,15 @@ int blockDim = 32; // 32 threads per block
   - S (cudaStream_t) specifies the associated stream, is an optional parameter which defaults to 0.
 
 > source -> https://stackoverflow.com/questions/26770123/understanding-this-cuda-kernels-launch-parameters
+
+## CUDA Built-in Variables for Thread Hierarchy
+
+| **Name**    | **Description**                            | **x**         | **y**         | **z**         |
+| ----------- | ------------------------------------------ | ------------- | ------------- | ------------- |
+| `threadIdx` | Thread index within the block (zero-based) | `threadIdx.x` | `threadIdx.y` | `threadIdx.z` |
+| `blockIdx`  | Block index within the grid (zero-based)   | `blockIdx.x`  | `blockIdx.y`  | `blockIdx.z`  |
+| `blockDim`  | Block dimensions in threads                | `blockDim.x`  | `blockDim.y`  | `blockDim.z`  |
+| `gridDim`   | Grid dimensions in blocks                  | `gridDim.x`   | `gridDim.y`   | `gridDim.z`   |
 
 ## Thread Synchronization
 

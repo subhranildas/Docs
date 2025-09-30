@@ -46,6 +46,8 @@
   - [Setup Guide](DOCS/GPU_PROGRAMMING/Setup_Guide.md)
   - [APIs and Architecture](DOCS/GPU_PROGRAMMING/APIs_and_Architecture.md)
   - [Kernels Basics](DOCS/GPU_PROGRAMMING/Kernels.md)
+  - [Vector Addition Example](DOCS/GPU_PROGRAMMING/Vector_addition.md)
+  - [Flops & Arithmetic Intensity](DOCS/GPU_PROGRAMMING/Flops_and_Arithmetic_Intensity.md)
 - **Links**
 - [![Github](assets/img/icons8-github-24.png)Github](https://github.com/subhranildas/Docs)
 - [![LinkedIn](assets/img/icons8-linkedin-24.png)LinkedIn](https://www.linkedin.com/in/subhranil-d/)
