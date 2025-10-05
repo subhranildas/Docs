@@ -1,6 +1,6 @@
 ## A Gentle Introduction to GPUs
 
-This guide provides a quick history of GPUs, explains why they are widely used in deep learning, and shows how they differ from CPUs and other specialized hardware.
+Following gives a quick history of GPUs, why they are widely used in deep learning, and how they differ from CPUs and other specialized hardware.
 
 ## Hardware Comparison
 
@@ -22,9 +22,9 @@ This guide provides a quick history of GPUs, explains why they are widely used i
 
 ### TPU (Tensor Processing Unit)
 
-- Google’s custom hardware for deep learning
-- Optimized for tensor operations (e.g., matrix multiplication)
-- Designed for AI workloads
+- Google’s custom hardware for Deep learning
+- Optimized for Tensor operations (e.g., Matrix Multiplication)
+- Designed for AI Workloads
 
 ### FPGA (Field Programmable Gate Array)
 
@@ -35,15 +35,23 @@ This guide provides a quick history of GPUs, explains why they are widely used i
 
 ## A Brief History of NVIDIA GPUs
 
-> For a deeper dive, watch: _**<a href="https://www.youtube.com/watch?v=kUqkOAU84bA" download>NVIDIA GPU History</a>**_
+?> For a deeper dive, watch: _**<a href="https://www.youtube.com/watch?v=kUqkOAU84bA" download>NVIDIA GPU History</a>**_
 
-> For CUDA compute capabilities across generations visit: _**<a href="https://developer.nvidia.com/cuda-gpus" download>CUDA GPU Compute Capability</a>**_
+?> A timeline of Innovation(NVIDIA): _**<a href="https://www.nvidia.com/en-us/about-nvidia/corporate-timeline/" download>NVIDIA History</a>**_
+
+?> For CUDA compute capabilities across generations visit: _**<a href="https://developer.nvidia.com/cuda-gpus" download>CUDA GPU Compute Capability</a>**_
 
 ## Why GPUs Excel at Deep Learning
 
 ![Von Neumann Architecture](Images/cpu-vs-gpu.png)
 
-- CPU (Host)
+- Massive Parallelism
+- High Memory Bandwidth
+- Optimized for Matrix Math
+- Mature Software Ecosystem
+
+## CPU (Host)
+
 - Optimized to minimize the time of a single task
 - Performance metric → Latency (seconds per task)
 
@@ -75,12 +83,12 @@ This guide provides a quick history of GPUs, explains why they are widely used i
 - Threads, Blocks, and Grids → **CUDA’s** way of organizing parallelism
 - GEMM → General Matrix Multiplication
 - SGEMM → Single-precision (fp32) General Matrix Multiplication
-- Host (CPU) → runs regular functions
-- Device (GPU) → runs kernels
+- Host (CPU) → Runs regular functions
+- Device (GPU) → Runs Kernels
 
 ## Summary
 
 - CPUs are latency-optimized (great for sequential, complex logic)
-- GPUs are throughput-optimized (ideal for parallel tasks like matrix ops)
+- GPUs are throughput-optimized (Ideal for Parallel Tasks like matrix operations)
 - TPUs and FPGAs are even more specialized hardware for AI
 - **CUDA** enables CPUs (host) and GPUs (device) to collaborate efficiently

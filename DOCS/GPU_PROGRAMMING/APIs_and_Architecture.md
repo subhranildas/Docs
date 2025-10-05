@@ -1,10 +1,11 @@
-## Device VS Host naming scheme
+## Device VS Host Naming scheme
 
 `h_A` refers to host (CPU) for variable name “A”
 
 `d_A` refers to device (GPU) for variable name “A”
 
-`__global__` is visible globally, meaning the CPU or _host_ can call these global functions. these don’t typically return anything but just do really fast operations to a variable you pass in. for example, I could multiply matrix A and B together, but I need to pass in a matrix of the needed size as C and change the values in C to the outputs of A \* B matmul. these are your cuda kernels
+`__global__` is visible globally, meaning the CPU or _host_ can call these global functions. these don’t typically return anything but just do really fast operations to a variable you pass in.
+For example, one could multiply matrix A and B together, but I need to pass in a matrix of the needed size as C and change the values in C to the outputs of A \* B matmul. these are your cuda kernels
 
 `__device__` is a very cool function I haven’t dived into yet but this is the small job that only the GPU can call. GPT-4 really liked my example of having a raw attention score matrix living on the `__global__` gpu cuda kernel and it needs to apply a scalar mask. instead of also doing this in the cuda kernel, we can have a `__device__` function defined in another .cu file or just exist as a function in the same file that does this SIMD scalar masking on any matrix we give it. this is the cuda equivalent of calling a function in a library instead of writing the function in your `main.py` file
 

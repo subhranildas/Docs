@@ -1,19 +1,19 @@
 ## Prerequisites
 
-Before installing CUDA, make sure your system meets these requirements:
+Before installing CUDA, make sure your system meets the following requirements:
 
-- **Laptop GPU** → NVIDIA RTX 3050 (supports CUDA Compute Capability 8.6)
-- **Operating System** → Windows 10/11 (64-bit) or Ubuntu 20.04/22.04 (recommended for Linux users)
-- **RAM** → At least 8 GB (16 GB preferred)
+- **Laptop/GPU GPU** → NVIDIA RTX 3050 (supports CUDA Compute Capability 8.6) for Example
+- **Operating System** → Windows 10/11 (64-bit) or Ubuntu 20.04/22.04 (Recommended for Linux users)
+- **RAM** → At least 8 GB (16 GB Preferred)
 - **Storage** → ~5–10 GB free for CUDA toolkit and drivers
 - **Compiler** → GCC (Linux) or MSVC (Windows)
 
-## Install NVIDIA Drivers and support Drivers
+## Install NVIDIA Drivers and Support Drivers
 
 ### On Windows
 
 1.  Go to [NVIDIA Drivers Download](https://www.nvidia.com/Download/index.aspx).
-2.  Select:
+2.  Example Selection:
     - **Product Series**: GeForce RTX 30 Series (Laptop)
     - **Product**: GeForce RTX 3050 Laptop GPU
     - **OS**: Windows 10/11 64-bit
@@ -23,7 +23,7 @@ Before installing CUDA, make sure your system meets these requirements:
     - cl.exe is part of Microsoft Visual Studio. If you don't have Visual Studio or the Build Tools installed, download and install them from the official Microsoft website.
       During installation, ensure you select the "Desktop development with C++" workload, as this includes the necessary C++ compiler components.
       Locate cl.exe:
-      After installation, cl.exe is typically found within a path similar to:
+      After installation, cl.exe is typically found within a path similar to the following:
 
           C:\Program Files (x86)\Microsoft Visual Studio\<version>\VC\Tools\MSVC\<toolset_version>\bin\HostX64\x64
 
@@ -51,7 +51,7 @@ You should see your RTX 3050 listed with driver and CUDA version.
 ### Download
 
 - Visit [CUDA Toolkit Downloads](https://developer.nvidia.com/cuda-downloads).
-- Select your OS, architecture, and version (e.g., CUDA 12.x).
+- Select your OS, architecture, and version (e.g., CUDA 13.x).
 
 ### Windows Installation
 
@@ -60,8 +60,7 @@ You should see your RTX 3050 listed with driver and CUDA version.
 3. Add CUDA paths manually if needed:
    - Add to **Environment Variables → Path**:
      ```
-     C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.x\bin
-     C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.x\libnvvp
+     C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.x\bin
      ```
 
 ### Ubuntu Installation
@@ -72,9 +71,9 @@ wget https://developer.download.nvidia.com/compute/cuda/12.2.2/local_installers/
 sudo sh cuda_12.2.2_535.54.03_linux.run
 ```
 
-!> Version might be different, follow the Download link above for accurate command.
+!> Version might be different, follow the Download **[LINK](https://developer.nvidia.com/cuda-downloads)** for accurate command.
 
-Update environment variables:
+Update Environment Variables:
 
 ```bash
 echo 'export PATH=/usr/local/cuda/bin:$PATH' >> ~/.bashrc
@@ -90,9 +89,9 @@ Run:
 nvcc --version
 ```
 
-You should see the installed CUDA version.
+Installed CUDA version should be visible.
 
-Also check GPU status:
+Check GPU status with the following Command:
 
 ```bash
 nvidia-smi
@@ -117,65 +116,76 @@ sudo cp cuda/lib64/* /usr/local/cuda/lib64/
 
 Windows → Copy `bin`, `include`, and `lib` files into corresponding CUDA folders.
 
----
+## Write & Run Your First CUDA Program (Command Line Compilation)
 
-## Write & Run Your First CUDA Program
-
-Create a simple **vector addition program**:
+Create a simple **Program that prints Block ID, Thread ID and Warp ID**:
 
 ```cpp
-// vector_add.cu
+/* ==================================================================================
+# A simple Program to print Block(Thread Block) ID, Thread ID and warp ID
+===================================================================================*/
+
+#include <cuda_runtime.h>
+#include <device_launch_parameters.h>
+
 #include <stdio.h>
 
-__global__ void add(int *a, int *b, int *c, int n) {
-    int idx = threadIdx.x + blockIdx.x * blockDim.x;
-    if (idx < n) c[idx] = a[idx] + b[idx];
+/* Kernel Function : To be executed in GPU not CPU */
+__global__ void test_01() {
+
+	int warpID = 0;
+	warpID = threadIdx.x / 32;
+	/* Print the Blocks and Threads IDs */
+	printf("\nThe Block ID is %d --- The Thread ID is %d --- The warp ID %d", blockIdx.x, threadIdx.x, warpID);
 }
 
+/* CUDA C always requires a main Function */
 int main() {
-    int n = 16;
-    int size = n * sizeof(int);
-    int h_a[16], h_b[16], h_c[16];
+	/* Kernel_Name <<< Number_of_Blocks, Number_of_Threads_per_Block >>> */
+	test_01 << <2, 64 >> > ();
+	/* Note: Please note that if the thread per block count is over 1024 then the
+			 application will not work as the GPU might be limited to 1024 threads per block.
+			 In case we want to do a vector addition of 2048 size then we will need 2 blocks
+			 of 1024 threads each to compute the sum in parallel */
+			 /* Note: Also note that the number of Blocks that we can use in a application is also
+					 limited, the maximum number of blocks we can use in a kernel call is limited
+					 by the number of SMs in the GPU and the number of blocks per SM in the GPU
+					 If a GPU has 32 blocks per SM and 10 SMs total then we can only use a maximum
+					 of 320 Blocks */
 
-    for (int i = 0; i < n; i++) { h_a[i] = i; h_b[i] = i * 2; }
-
-    int *d_a, *d_b, *d_c;
-    cudaMalloc((void**)&d_a, size);
-    cudaMalloc((void**)&d_b, size);
-    cudaMalloc((void**)&d_c, size);
-
-    cudaMemcpy(d_a, h_a, size, cudaMemcpyHostToDevice);
-    cudaMemcpy(d_b, h_b, size, cudaMemcpyHostToDevice);
-
-    add<<<1, 16>>>(d_a, d_b, d_c, n);
-
-    cudaMemcpy(h_c, d_c, size, cudaMemcpyDeviceToHost);
-
-    for (int i = 0; i < n; i++) printf("%d + %d = %d\n", h_a[i], h_b[i], h_c[i]);
-
-    cudaFree(d_a); cudaFree(d_b); cudaFree(d_c);
-    return 0;
+					 /* The Below Function is used make the CPU wait until all the GPU operations are executed */
+	cudaDeviceSynchronize();
 }
 ```
 
-Compile & run:
+Compile & Run:
 
 ```bash
-nvcc vector_add.cu -o vector_add
-./vector_add
+nvcc <fileName>.cu -o out
+./out
 ```
 
-## Next Steps
+## Write & Run Your First CUDA Program (Using Visual Studio)
 
-- Learn about **CUDA kernels, threads, blocks, and grids**.
-- Try running **cuBLAS** and **cuDNN** libraries.
-- Explore **PyTorch** or **TensorFlow GPU versions** for deep learning.
+Creating a New CUDA Project in Visual Studio
+
+- Open Visual Studio
+- Create a New Project
+  - Go to File → New → Project.
+  - Search for “CUDA” in the templates.
+- Select CUDA 12.3 Runtime (version may differ based on toolkit).
+- Click Next.
+  ![Create New Project Window](Images/Create_New_Projec_VStudio.png)
+- Configure the Project
+  - Project Name: <Project_Name>
+  - Location: Choose desired folder.
+- Click Create.
+
+Visual Studio automatically creates a CUDA project structure include an example program.
 
 ## Quick Reference Commands
 
 ```bash
 nvidia-smi          # GPU status
 nvcc --version      # CUDA version
-deviceQuery         # Check CUDA samples
-bandwidthTest       # Benchmark GPU memory
 ```
