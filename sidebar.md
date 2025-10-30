@@ -52,6 +52,12 @@
     <!-- - [Kernels Basics](DOCS/GPU_PROGRAMMING/Kernels.md) -->
   - [Vector Addition Example](DOCS/GPU_PROGRAMMING/Vector_addition.md)
   - [Reference Links](DOCS/GPU_PROGRAMMING/Course_Resources/Links.md)
+- **Embedded 101 (Q&A)**
+  - [Basic Embedded Questions](DOCS/EMBEDDED_101/basic_embedded.md)
+  - [Communication Protocol Questions](DOCS/EMBEDDED_101/communication_protocol.md)
+  - [DMA Related Questions](DOCS/EMBEDDED_101/dma_related_questions.md)
+  - [Embedded Coding Questions](DOCS/EMBEDDED_101/embedded_coding.md)
+  - [Security Related Questions](DOCS/EMBEDDED_101/security_related.md)
 - **Links**
 - [![Github](assets/img/icons8-github-24.png)Github](https://github.com/subhranildas/Docs)
 - [![LinkedIn](assets/img/icons8-linkedin-24.png)LinkedIn](https://www.linkedin.com/in/subhranil-d/)
