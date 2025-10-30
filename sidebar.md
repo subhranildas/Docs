@@ -7,6 +7,7 @@
   - [Configurables in FreeRTOS](DOCS/RTOS_DOCS/Configurables_in_FreeRTOS.md)
   - [Communication and Sunchronization](DOCS/RTOS_DOCS/Communication_and_Synchronization_in_FreeRTOS.md)
   - [Memory Management](DOCS/RTOS_DOCS/Heap_Schemes_Detailed_in_FreeRTOS.md)
+  - [Questions & Answers](DOCS/RTOS_DOCS/Questions_and_Answers.md)
 - **Make**
   - [Introduction](DOCS/MAKE_DOCS/Introduction.md)
   - [Rules in Makefiles](DOCS/MAKE_DOCS/Rules_In_Makefiles.md)
