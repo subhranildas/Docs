@@ -8,6 +8,13 @@
   - [Communication and Sunchronization](DOCS/RTOS_DOCS/Communication_and_Synchronization_in_FreeRTOS.md)
   - [Memory Management](DOCS/RTOS_DOCS/Heap_Schemes_Detailed_in_FreeRTOS.md)
   - [Questions & Answers](DOCS/RTOS_DOCS/Questions_and_Answers.md)
+- **Embedded Linux**
+  - [Prerequisite](DOCS/EMBEDDED_LINUX_DOCS/prerequisites.md)
+  - [Introduction](DOCS/EMBEDDED_LINUX_DOCS/intro.md)
+  - [Linux Kernel Source](DOCS/EMBEDDED_LINUX_DOCS/kernel_source.md)
+  - [Device Driver Intro](DOCS/EMBEDDED_LINUX_DOCS/device_driver_intro.md)
+  - [Kernel Configuration](DOCS/EMBEDDED_LINUX_DOCS/kernel_configuration.md)
+  - [Links](DOCS/EMBEDDED_LINUX_DOCS/Links.md)
 - **Make**
   - [Introduction](DOCS/MAKE_DOCS/Introduction.md)
   - [Rules in Makefiles](DOCS/MAKE_DOCS/Rules_In_Makefiles.md)
