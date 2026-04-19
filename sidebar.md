@@ -33,6 +33,13 @@
   - [Cortex-M Registers and Vector-Table <span class="prereq">(Prerequisite)</span>](DOCS/ASM_DOCS/Cortex-M_Registers_and_Vector-Table_Prerequisite.md)
   - [ARM,Thumb & Thumb-2 Instruction Sets](DOCS/ASM_DOCS/ARM_Thumb_Thumb2_Instruction_Sets.md)
   - [Assembler Directives](DOCS/ASM_DOCS/Assembler_Directives.md)
+- **Classical ML**
+  - [Introduction](DOCS/CLASSICAL_ML/Introduction.md)
+  - [Regression](DOCS/CLASSICAL_ML/Regression.md)
+  - [Gini Impurity](DOCS/CLASSICAL_ML/Gini_Impurity.md)
+  - [Entropy](DOCS/CLASSICAL_ML/Entropy.md)
+  - [Decision Trees](DOCS/CLASSICAL_ML/Decision_Trees.md)
+  - [PCA](DOCS/CLASSICAL_ML/PCA.md)
 - **Docker**
   - [Introduction](DOCS/DOCKER_DOCS/Introduction.md)
   - [Docker Images & Containers](DOCS/DOCKER_DOCS/Images_and_Containers.md)
