@@ -33,6 +33,14 @@
   - [Cortex-M Registers and Vector-Table <span class="prereq">(Prerequisite)</span>](DOCS/ASM_DOCS/Cortex-M_Registers_and_Vector-Table_Prerequisite.md)
   - [ARM,Thumb & Thumb-2 Instruction Sets](DOCS/ASM_DOCS/ARM_Thumb_Thumb2_Instruction_Sets.md)
   - [Assembler Directives](DOCS/ASM_DOCS/Assembler_Directives.md)
+
+- **Rust**
+  - [Introduction](DOCS/RUST_DOCS/introduction.md)
+  - [Variables and Mutability](DOCS/RUST_DOCS/variables_and_mutability.md)
+  - [Rust Data Types](DOCS/RUST_DOCS/rust_data_types.md)
+  - [Rust Functions](DOCS/RUST_DOCS/rust_functions.md)
+  - [The Rust Compiler](DOCS/RUST_DOCS/rust_compiler_pipeline_documentation.md)
+
 - **Docker**
   - [Introduction](DOCS/DOCKER_DOCS/Introduction.md)
   - [Docker Images & Containers](DOCS/DOCKER_DOCS/Images_and_Containers.md)
